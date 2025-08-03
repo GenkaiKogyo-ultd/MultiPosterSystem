@@ -1,0 +1,23 @@
+{
+    "name": "com.genkaikogyo-ultd.wpmps.editor",
+    "rootNamespace": "",
+    "references": [
+        "VRC.SDK3",
+        "VRC.SDK3.Editor",
+        "VRC.SDKBase",
+        "VRC.SDKBase.Editor",
+        "UdonSharp.Runtime",
+        "com.genkaikogyo-ultd.wpmps.runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

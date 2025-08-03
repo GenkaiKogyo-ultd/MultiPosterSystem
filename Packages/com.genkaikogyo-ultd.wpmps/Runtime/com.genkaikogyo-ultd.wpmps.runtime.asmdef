@@ -1,0 +1,19 @@
+{
+    "name": "com.genkaikogyo-ultd.wpmps.runtime",
+    "rootNamespace": "",
+    "references": [
+        "VRC.SDK3",
+        "VRC.SDKBase",
+        "VRC.Udon.Serialization.OdinSerializer",
+        "UdonSharp.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
