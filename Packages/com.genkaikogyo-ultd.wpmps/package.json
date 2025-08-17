@@ -1,17 +1,16 @@
 {
   "name": "com.genkaikogyo-ultd.wpmps",
   "displayName": "MultiPosterSystem",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Multi Poster System for VRChat.",
   "gitDependencies": {},
   "vpmDependencies": {
-    "com.vrchat.worlds": "3.8.2"
+    "com.vrchat.worlds": ">=3.7.5"
   },
   "author": {
     "name": "wacky",
     "email": "wacky612@gmail.com"
   },
   "legacyFolders": {},
-  "legacyFiles": {},
-  "localPath": "C:\\Users\\wacky\\Documents\\unity\\MultiPosterSystem\\Packages\\com.genkaikogyo-ultd.wpmps"
+  "legacyFiles": {}
 }
