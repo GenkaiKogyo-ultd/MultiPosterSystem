@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 4561746153643043765, guid: 436c1ebea0b22274d84b6a97a524775c, type: 3}
     - target: {fileID: 5234518270379678533, guid: 436c1ebea0b22274d84b6a97a524775c, type: 3}
       propertyPath: m_Name
-      value: MultiPosterSystem Variant
+      value: MultiPosterSystem_Sample_Dynamic
       objectReference: {fileID: 0}
     - target: {fileID: 7438244178915863591, guid: 436c1ebea0b22274d84b6a97a524775c, type: 3}
       propertyPath: serializationData.Prefab
@@ -78,11 +78,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9017343473418480786, guid: 436c1ebea0b22274d84b6a97a524775c, type: 3}
       propertyPath: _posterVideoUrl.url
-      value: https://genkaikogyo-ultd.github.io/MultiPosterTemplate/poster.mp4
+      value: https://genkaikogyo-ultd.github.io/MultiPosterSystem-DataBuilder/poster.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 9017343473418480786, guid: 436c1ebea0b22274d84b6a97a524775c, type: 3}
       propertyPath: _groupIdsJsonUrl.url
-      value: https://genkaikogyo-ultd.github.io/MultiPosterTemplate/group_id.json
+      value: https://genkaikogyo-ultd.github.io/MultiPosterSystem-DataBuilder/group_id.json
       objectReference: {fileID: 0}
     - target: {fileID: 9017343473418480786, guid: 436c1ebea0b22274d84b6a97a524775c, type: 3}
       propertyPath: serializationData.Prefab
