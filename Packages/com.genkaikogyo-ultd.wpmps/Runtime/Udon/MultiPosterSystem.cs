@@ -19,6 +19,7 @@ namespace Wacky612.MultiPosterSystem
         private PosterImage     _frontPosterImage, _backPosterImage;
         private GroupPageOpener _groupPageOpener;
         private LoadingScreen   _loadingScreen;
+        private ClickText       _clickText;
         private DateTime        _referenceDateTime;
 
         private void Start()
@@ -37,6 +38,7 @@ namespace Wacky612.MultiPosterSystem
             _backPosterImage   = (PosterImage) GetComponentInChildren<BackPosterImage>();
             _groupPageOpener   = GetComponentInChildren<GroupPageOpener>();
             _loadingScreen     = GetComponentInChildren<LoadingScreen>();
+            _clickText         = GetComponentInChildren<ClickText>();
             _referenceDateTime = DateTime.MinValue;
 
             if (_durationSeconds   < 4.0f) _durationSeconds   = 4.0f;
@@ -80,6 +82,7 @@ namespace Wacky612.MultiPosterSystem
                         _loadingScreen.SetActive(false);
                         UpdatePosterImage(index, seconds);
                         UpdatePosterGroupId(index, seconds);
+                        _clickText.SetActive(_groupPageOpener.GroupId != "");
                     }
                 }
             }

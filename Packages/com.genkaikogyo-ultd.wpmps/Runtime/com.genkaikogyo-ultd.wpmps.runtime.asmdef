@@ -5,7 +5,8 @@
         "VRC.SDK3",
         "VRC.SDKBase",
         "VRC.Udon.Serialization.OdinSerializer",
-        "UdonSharp.Runtime"
+        "UdonSharp.Runtime",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
