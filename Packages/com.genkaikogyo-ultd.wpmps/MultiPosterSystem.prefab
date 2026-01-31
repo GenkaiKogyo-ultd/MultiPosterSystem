@@ -1476,7 +1476,7 @@ MonoBehaviour:
     SerializationNodes: []
   _udonSharpBackingUdonBehaviour: {fileID: 4526460008873443531}
   _posterType: 0
-  _durationSeconds: 4
+  _durationSeconds: 10
   _transitionSeconds: 2
 --- !u!114 &4526460008873443531
 MonoBehaviour:
