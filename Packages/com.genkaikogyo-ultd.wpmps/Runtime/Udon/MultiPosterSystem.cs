@@ -10,10 +10,11 @@ namespace Wacky612.MultiPosterSystem
     public class MultiPosterSystem : UdonSharpBehaviour
     {
         [SerializeField] private PosterType _posterType;
-        [SerializeField] private float      _durationSeconds   = 4.0f;
+        [SerializeField] private float      _durationSeconds   = 10.0f;
         [SerializeField] private float      _transitionSeconds = 2.0f;
 
         [UdonSynced] private long _referenceDateTimeBinary;
+        [UdonSynced] private int  _startingIndex = -1;
 
         private Posters         _posters;
         private PosterImage     _frontPosterImage, _backPosterImage;
@@ -53,11 +54,14 @@ namespace Wacky612.MultiPosterSystem
         {
             if (_posters.IsReady)
             {
-                if (_referenceDateTime == DateTime.MinValue)
+                if (_referenceDateTime == DateTime.MinValue || _startingIndex == -1)
                 {
-                    _referenceDateTime = Networking.GetNetworkDateTime();
-                    Networking.SetOwner(Networking.LocalPlayer, this.gameObject);
-                    RequestSerialization();
+                    if (Networking.IsOwner(this.gameObject))
+                    {
+                        _referenceDateTime = Networking.GetNetworkDateTime();
+                        _startingIndex     = UnityEngine.Random.Range(0, _posters.Count);
+                        RequestSerialization();
+                    }
                 }
                 else
                 {
@@ -150,7 +154,9 @@ namespace Wacky612.MultiPosterSystem
 
         private int GetIndex()
         {
-            return (int) Math.Floor(GetSecondsFromPosterStart() / (_durationSeconds + _transitionSeconds));
+            int offset = (int) Math.Floor(GetSecondsFromPosterStart() / (_durationSeconds + _transitionSeconds));
+            
+            return (_startingIndex + offset) % _posters.Count;
         }
 
         private float GetSeconds()
@@ -166,6 +172,11 @@ namespace Wacky612.MultiPosterSystem
         public override void OnDeserialization()
         {
             _referenceDateTime = DateTime.FromBinary(_referenceDateTimeBinary);
+        }
+
+        public override void OnOwnershipTransferred(VRCPlayerApi player)
+        {
+            if (Networking.IsOwner(this.gameObject)) RequestSerialization();            
         }
     }
 
