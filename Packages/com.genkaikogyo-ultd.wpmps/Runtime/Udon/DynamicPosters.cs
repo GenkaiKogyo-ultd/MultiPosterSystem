@@ -89,9 +89,9 @@ namespace Wacky612.MultiPosterSystem
             if (time < _processingIndex + 1 || time >= _processingIndex + 2)
             {
                 // まれに、SetTime() しても動画プレイヤーの再生時間が目的の時間にならないことがある
-                // 一旦、SetTime(0) した後、_UpdateVideoPlayerTime を再度実行することで対処している
+                // 一旦、SetTime(_processingIndex) した後、_UpdateVideoPlayerTime を再度実行することで対処している
 
-                _videoPlayer.SetTime(0);
+                _videoPlayer.SetTime(_processingIndex);
                 SendCustomEventDelayedFrames(nameof(_UpdateVideoPlayerTime), 10);
             }
             else
