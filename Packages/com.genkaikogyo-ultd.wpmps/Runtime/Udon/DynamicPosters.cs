@@ -105,15 +105,8 @@ namespace Wacky612.MultiPosterSystem
             var texture = new RenderTexture(_renderTexture);
             texture.Create();
 
-            #if UNITY_STANDALONE_WIN
-            // var scale  = new Vector2(1, -1);
-            // var offset = new Vector2(0,  1);
             var scale  = new Vector2(1,  1);
             var offset = new Vector2(0,  0);
-            #else
-            var scale  = new Vector2(1,  1);
-            var offset = new Vector2(0,  0);
-            #endif
 
             VRCGraphics.Blit(_renderTexture, texture, scale, offset);
             _textures[_processingIndex] = (Texture) texture;
